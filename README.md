@@ -43,4 +43,4 @@ class Lampada:
       self.estado = False
       print("A lâmpada foi desligada.")
 ```
-[👩‍💻 Ver codigo]()
+[👩‍💻 Ver codigo](https://github.com/nadiduno/LampPoo/blob/main/main.py)
