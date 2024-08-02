@@ -19,13 +19,29 @@ def on_intent(intent_request):
     elif intent_name == "DesligarLampada":
         light.turn_of()
 
+#Simulando um sensor 
+class SensorLuminosity:
+    def metric_luminosity(self):
+        # Simulação: retorna um valor aleatório entre 0 e 100
+        import random
+        return random.randint(0, 100)
 
 # Criando uma instância da lâmpada
 light = LightBulb()
+
+# Criando uma instância do sensor
+sensor = SensorLuminosity()
 
 #light.turn_on()
 
 # Simulando a interação com a Alexa para ligar "Alexa LigarLampada"
 on_intent({'intent': {'name': 'LigarLampada'}})
 
-light.turn_of()
+#light.turn_of()
+
+# Usando o sensor para desligar-a
+
+lighting_current = sensor.metric_luminosity()
+
+if lighting_current > 30:
+    light.turn_of()
