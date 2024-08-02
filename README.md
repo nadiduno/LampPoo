@@ -30,17 +30,35 @@ O código demonstra como usar a programação orientada a objetos em Python para
 [Python](https://www.python.org/)
 <br/>
 
-```Python
-class Lampada:
+~~~ Python - POO
+class LightBulb:
   def __init__(self):
-      self.estado = False
+      self.state = False
 
-  def ligar(self):
-      self.estado = True
+  def turn_on(self):
+      self.state = True
       print("A lâmpada foi ligada.")
 
-  def desligar(self):
-      self.estado = False
+  def turn_of(self):
+      self.state = False
       print("A lâmpada foi desligada.")
-```
+~~~
+
+~~~python - Simulating Alexa
+def on_intent(intent_request):
+    intent_name = intent_request['intent']['name']
+
+    if intent_name == "LigarLampada":
+        light.turn_on()
+    elif intent_name == "DesligarLampada":
+        light.turn_of()
+~~~
+
+~~~python - Sensor
+class SensorLuminosity:
+    def metric_luminosity(self):
+        import random
+        return random.randint(0, 100)
+~~~
+
 [👩‍💻 Ver codigo](https://github.com/nadiduno/LampPoo/blob/main/main.py)
