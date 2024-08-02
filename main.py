@@ -1,17 +1,16 @@
-class Lampada:
+class LightBulb:
   def __init__(self):
-      self.estado = False
+      self.state = False
 
-  def ligar(self):
-      self.estado = True
+  def turn_on(self):
+      self.state = True
       print("A lâmpada foi ligada.")
 
-  def desligar(self):
-      self.estado = False
+  def turn_of(self):
+      self.state = False
       print("A lâmpada foi desligada.")
 
-
 # Criando uma instância da lâmpada
-lampada = Lampada()
-lampada.ligar()
-lampada.desligar()
+light = LightBulb()
+light.turn_on()
+light.turn_of()
